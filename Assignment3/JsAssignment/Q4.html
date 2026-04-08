@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Square Calculator</title>
+</head>
+
+<body>
+
+<h3>Enter a Number</h3>
+
+<input type="number" id="num" placeholder="Enter number" required>
+
+<button onclick="findSquare()">Find Square</button>
+
+<p id="result"></p>
+
+<script>
+function findSquare()
+{
+    var n = document.getElementById("num").value;
+    var square = n * n;
+
+    document.getElementById("result").innerHTML = "Square is: " + square;
+}
+</script>
+
+</body>
+</html>
