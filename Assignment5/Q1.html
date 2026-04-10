@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Paragraph Color Change</title>
+
+<script>
+function changeColor()
+{
+    var color = document.getElementById("colorpicker").value;
+
+    for (var i = 1; i <= 4; i++)
+    {
+        var p = document.getElementById("p" + i);
+        p.style.backgroundColor = color;
+        p.style.fontWeight = "bold";
+    }
+}
+</script>
+
+</head>
+
+<body>
+
+<h2>Paragraph Color Changer</h2>
+
+<input type="color" id="colorpicker">
+<button onclick="changeColor()">Change Color</button>
+
+<p id="p1">This is Paragraph 1</p>
+<p id="p2">This is Paragraph 2</p>
+<p id="p3">This is Paragraph 3</p>
+<p id="p4">This is Paragraph 4</p>
+
+
+</body>
+</html>
