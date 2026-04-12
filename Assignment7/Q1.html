@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <SCRipt> 
+let arr = [5, 8, 3, 10, 7, 6, 2, 9, 4, 1];
+
+console.log("Original Array:", arr);
+
+let evenNumbers = arr.filter(num => num % 2 == 0);
+console.log("Even Numbers:", evenNumbers);
+
+let oddNumbers = arr.filter(num => num % 2 !== 0);
+console.log("Odd Numbers:", oddNumbers);
+
+let sortedArray = [...arr].sort((a, b) => a - b);
+console.log("Sorted Array:", sortedArray);
+</SCRipt>
+</body>
+</html>
