@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <style>
+        .error{
+            color:red;
+            margin-left:10px;
+        }
+    </style>
+</head>
+<body>
+
+<form id="myForm">
+
+<label>Enter Name:</label>
+<input type="text" id="name" required minlength="3" maxlength="10">
+<label>Enter Password:</label>
+<input type="password" id="pass" required minlength="8" maxlength="8">
+
+
+<span id="errorMsg" class="error"></span>
+
+<br><br>
+
+<button type="button" onclick="validateForm()">Submit</button>
+
+</form>
+
+<script>
+
+function validateForm(){
+
+    let input = document.getElementById("name");
+    let error = document.getElementById("errorMsg");
+    let password = document.getElementById("pass");
+    
+    if(input.validity.valueMissing){
+        error.textContent = "This field is required";
+    }
+    else if(input.validity.tooShort){
+        error.textContent = "Minimum 3 characters required for name";
+    }
+    else if(input.validity.tooLong){
+        error.textContent = "Maximum 10 characters allowed";
+    }
+    else if(password.validity.valueMissing){
+        error.textContent = "This field is required";
+    }
+    else if(password.validity.tooShort){
+        error.textContent = "Minimum 8 characters required for passsword";
+    }
+    else{
+        error.textContent = "Valid input";
+        error.style.color = "green";
+
+        
+    }
+
+}
+
+</script>
+
+</body>
+</html>

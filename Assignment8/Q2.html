@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animate Div</title>
+<style>
+  #box {
+    width: 50px;
+    height: 50px;
+    background-color: #4CAF50;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    transition: all 2s ease;
+  }
+
+  #startBtn, #stopBtn {
+    margin-top: 150px;
+  }
+</style>
+</head>
+<body>
+
+<div id="box"></div>
+
+<button id="startBtn">Start</button>
+<button id="stopBtn">Stop</button>
+
+<script>
+  const box = document.getElementById('box');
+  const startBtn = document.getElementById('startBtn');
+  const stopBtn = document.getElementById('stopBtn');
+
+  startBtn.addEventListener('click', () => {
+    box.style.transition = "all 2s ease";
+    box.style.left = '400px';
+    box.style.width = '100px';
+    box.style.height = '100px';
+  });
+
+  stopBtn.addEventListener('click', () => {
+    box.style.transition = "none"; 
+  });//
+</script>
+
+</body>
+</html>

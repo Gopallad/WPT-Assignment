@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Data</title>
+<style>
+table, th, td{
+    border:1px solid black;
+    border-collapse: collapse;
+    padding:8px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Student Form</h2>
+
+Student ID:
+<input type="text" id="sid"><br><br>
+
+Student Name:
+<input type="text" id="sname"><br><br>
+
+<button onclick="saveStudent()">Save</button>
+
+<h3>Student List</h3>
+
+<table id="studentTable">
+<tr>
+<th>Student ID</th>
+<th>Student Name</th>
+</tr>
+</table>
+
+<script>
+
+let students = [];   
+
+function saveStudent(){
+
+    let id = document.getElementById("sid").value;
+    let name = document.getElementById("sname").value;
+
+    let student = {
+        studentId: id,
+        studentName: name
+    };
+
+    students.push(student);
+
+    displayStudents();
+
+}
+
+function displayStudents(){
+
+    let table = document.getElementById("studentTable");
+
+    table.innerHTML = `
+    <tr>
+        <th>Student ID</th>
+        <th>Student Name</th>
+    </tr>
+    `;
+
+    students.forEach(function(stu){
+
+        let row = table.insertRow();
+
+        let cell1 = row.insertCell(0);
+        let cell2 = row.insertCell(1);
+
+        cell1.textContent = stu.studentId;
+        cell2.textContent = stu.studentName;
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
