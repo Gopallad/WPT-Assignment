@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Object Destructuring Example</title>
+</head>
+<body>
+  <h2>Book Details</h2>
+  <div id="book-details"></div>
+
+  <script>
+    const book = {
+      title: "HruGO",
+      author: "Sanket",
+      year: 2001,
+    };
+ 
+    const { title, author, year, genre, publisher } = book;
+
+    const bookDetailsDiv = document.getElementById('book-details');
+
+    bookDetailsDiv.innerHTML = `
+      <p><strong>Title:</strong> ${title}</p>
+      <p><strong>Author:</strong> ${author}</p>
+      <p><strong>Year:</strong> ${year}</p>
+      
+    `;
+   
+  </script>
+</body> 
+</html>
